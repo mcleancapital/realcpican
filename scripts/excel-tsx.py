@@ -60,7 +60,7 @@ def update_excel(file_path, recent_date, recent_price):
         # Directly calculate and update column C values
         max_row = ws.max_row
         for row in range(2, max_row + 1):
-            reference_row = row + 12  # Reference row is 12 rows below
+            reference_row = row + 252  # Reference row is 252 rows below
             if reference_row <= max_row:  # Only calculate if reference row exists
                 current_value = ws.cell(row=row, column=2).value  # Get value from column B of the current row
                 reference_value = ws.cell(row=reference_row, column=2).value  # Get value from column B of the reference row
