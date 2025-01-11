@@ -11,7 +11,7 @@ excel_file_path = './data/sectors.xlsx'
 def fetch_recent_stock_data(symbol):
     try:
         ticker = Ticker(symbol)
-        hist = ticker.history(period="1mo")  # Fetch the last month's data
+        hist = ticker.history(period="1d")  # Fetch the last day's data
         recent_date = hist.index[-1].date()  # Most recent date
         recent_price = hist['Close'][-1]    # Most recent closing price
         return recent_date, recent_price
