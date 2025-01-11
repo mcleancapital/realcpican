@@ -1,0 +1,399 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Top Business News</title>
+    <style>
+        body {
+            font-family: garamond, sans-serif;
+            line-height: 1.4;
+            margin: 15px;
+            padding: 0;
+        }
+        h2 {
+            font-weight: bold;
+            text-align: left;
+        }
+        a {
+            color: green;
+            text-decoration: none;
+        }
+        a:hover {
+            text-decoration: underline;
+        }
+        ul {
+            padding: 0;
+            list-style: none;
+        }
+        li {
+            margin-bottom: 15px;
+        }
+        p {
+            margin: 0;
+            font-size: 16px;
+        }
+        h3 {
+            font-size: 16px;
+            font-weight: normal;
+        }
+	img {
+            max-width: 250px; /* Set a maximum width for images */
+            height: auto; /* Maintain aspect ratio */
+            display: block;
+            margin-bottom: 10px; /* Add spacing below the image */
+        }
+
+	@media (max-width: 729px) {
+                        
+    	.mobile-menu {
+                display: flex;
+                justify-content: space-around;
+                position: fixed;
+                top: 0;
+                left: 0;
+                width: 100%;
+                background-color: #ffffff;
+                border-bottom: 1px solid #ccc;
+                z-index: 1000;
+                padding: 10px 0;
+            }
+            .mobile-menu button {
+                flex: 1;
+                padding: 10px;
+                font-size: 16px;
+                border: none;
+                background-color: #fff;
+                cursor: pointer;
+                transition: background-color 0.3s ease;
+            }
+            .mobile-menu button:hover {
+                background-color: #e0e0e0;
+            }
+            body {
+                margin-top: 50px; /* Prevent content overlap with the fixed menu */
+            }
+	}
+
+footer{
+	padding:var(--std_padding);
+	box-shadow:rgb(0 0 0 / 8%) 0 -1px 0;
+	text-align:center;
+	color:#717171;font-size:.75em}
+
+@media(min-width:730px){
+
+.mobile-menu {
+        display: none;
+    }
+
+footer{
+	display: none;
+    }
+}
+
+    </style>
+</head>
+
+
+<body>
+
+<div class="mobile-menu">
+    <img src="/static/images/logo.jpg" alt="Real CPI Logo" height="30" />
+    <a href="https://www.realcpi.ca"><button id="data-button">Data</button></a>
+    <a href="https://www.realcpi.ca/news_mobile.html"><button id="news-button">News</button></a>
+</div>
+<br>
+    <div id="news-section">
+        <h2>Top Business News</h2>
+        <ul>
+
+        <li>
+            <img src='https://image.cnbcfm.com/api/v1/image/107203140-1677874751146-gettyimages-1471025007-l1006002_69ff97ac-d658-41e7-ab33-68cac802d336.jpeg?v=1736553283&w=1920&h=1080' alt='Article Image'>
+            <h3>
+                <a href="https://www.cnbc.com/2025/01/10/nordstrom-earnings-jwn-raises-sales-outlook-after-better-holiday-season.html" target="_blank" rel="noopener noreferrer"><b>Nordstrom raises sales outlook after holiday season was better than feared</b></a>
+                <p><i>Source:</i> CNBC</p>
+            </h3>
+            <p>CEO Erik Nordstrom credited the company's "efforts to remain competitive in the promotional environment and the strength of our offering."</p>
+        </li>
+    
+        <li>
+            <img src='https://image.cnbcfm.com/api/v1/image/107346346-1702387745394-gettyimages-1848064872-0j4a9604_0i7mf9jv.jpeg?v=1736558578&w=1920&h=1080' alt='Article Image'>
+            <h3>
+                <a href="https://www.cnbc.com/2025/01/10/mcdonalds-to-close-three-cosmcs-locations-and-open-two-more.html" target="_blank" rel="noopener noreferrer"><b>McDonald's to close three CosMc's locations — and open two more</b></a>
+                <p><i>Source:</i> CNBC</p>
+            </h3>
+            <p>McDonald's created CosMc's as its entry point into the growing "afternoon beverage pick-me-up occasion."</p>
+        </li>
+    
+        <li>
+            <img src='https://image.cnbcfm.com/api/v1/image/108084968-1736526729465-gettyimages-2193262342-jr_10330_xewjjjdi.jpeg?v=1736535688&w=1920&h=1080' alt='Article Image'>
+            <h3>
+                <a href="https://www.cnbc.com/2025/01/10/airlines-cancel-more-than-2000-us-flights-amid-storm-delta-slide-evacuation-at-atlanta.html" target="_blank" rel="noopener noreferrer"><b>Airlines cancel more than 3,000 U.S. flights amid storm, Delta slide evacuation at Atlanta</b></a>
+                <p><i>Source:</i> CNBC</p>
+            </h3>
+            <p>Flight disruptions stretched from Dallas to Atlanta.</p>
+        </li>
+    
+        <li>
+            <img src='https://image.cnbcfm.com/api/v1/image/108084477-1736457517657-CEC_new_storefront_image_3.JPG?v=1736457590&w=1920&h=1080' alt='Article Image'>
+            <h3>
+                <a href="https://www.cnbc.com/2025/01/10/chuck-e-cheese-makes-comeback-after-bankruptcy.html" target="_blank" rel="noopener noreferrer"><b>Chuck E. Cheese makes a comeback, with trampolines and a subscription program</b></a>
+                <p><i>Source:</i> CNBC</p>
+            </h3>
+            <p>Chuck E. Cheese's parent company CEC Entertainment filed for Chapter 11 bankruptcy in 2020.</p>
+        </li>
+    
+        <li>
+            <img src='https://image.cnbcfm.com/api/v1/image/108021767-1736517422148-108021767-1723840887136-IMG_9789.jpg?v=1736517435&w=1920&h=1080' alt='Article Image'>
+            <h3>
+                <a href="https://www.cnbc.com/2025/01/10/disney-fox-and-warner-bros-discovery-call-off-plans-to-launch-venu-sports-streaming-service.html" target="_blank" rel="noopener noreferrer"><b>Disney, Fox and Warner Bros. Discovery call off plans to launch Venu sports streaming service</b></a>
+                <p><i>Source:</i> CNBC</p>
+            </h3>
+            <p>Venu was first announced in February and intended to combine the live sports assets of Fox, WBD and Disney-owned ESPN.</p>
+        </li>
+    
+        <li>
+            <img src='https://image.cnbcfm.com/api/v1/image/108084783-1736514833735-gettyimages-2182012374-img_6657_h4emkjun.jpeg?v=1736514872&w=1920&h=1080' alt='Article Image'>
+            <h3>
+                <a href="https://www.cnbc.com/2025/01/10/wayfair-to-exit-germany-cut-730-jobs-in-latest-layoffs.html" target="_blank" rel="noopener noreferrer"><b>Wayfair to exit Germany, cut 730 jobs as it looks to focus on physical retail</b></a>
+                <p><i>Source:</i> CNBC</p>
+            </h3>
+            <p>Wayfair, an early e-commerce disruptor, wants to focus more on physical retail and has decided to exit the German market and cut 730 jobs as a result.</p>
+        </li>
+    
+        <li>
+            <img src='https://image.cnbcfm.com/api/v1/image/108084755-1736512807063-gettyimages-2192540068-AFP_36TF86B.jpeg?v=1736550744&w=1920&h=1080' alt='Article Image'>
+            <h3>
+                <a href="https://www.cnbc.com/2025/01/10/los-angeles-wildfires-airlines-travel-waivers.html" target="_blank" rel="noopener noreferrer"><b>Airlines extend travel waivers due to LA wildfires</b></a>
+                <p><i>Source:</i> CNBC</p>
+            </h3>
+            <p>Airlines are waiving change fees and fare differences for Los Angeles-area flights due to wildfires.</p>
+        </li>
+    
+        <li>
+            <img src='https://image.cnbcfm.com/api/v1/image/108066601-1732225643738-gettyimages-2185274850-AFP_36N33DU.jpeg?v=1736536506&w=1920&h=1080' alt='Article Image'>
+            <h3>
+                <a href="https://www.cnbc.com/2025/01/10/stellantis-aims-to-improve-us-sales-market-share-in-2025.html" target="_blank" rel="noopener noreferrer"><b>Stellantis aims to reverse yearslong declines in U.S. sales and market share in 2025</b></a>
+                <p><i>Source:</i> CNBC</p>
+            </h3>
+            <p>Stellantis' top priority for the U.S. this year is to grow its retail market share after several years of declining sales in its largest, most crucial market.</p>
+        </li>
+    
+        <li>
+            <img src='https://image.cnbcfm.com/api/v1/image/108045246-1728470860521-gettyimages-2161043544-20090101240712-99-710143.jpeg?v=1736519329&w=1920&h=1080' alt='Article Image'>
+            <h3>
+                <a href="https://www.cnbc.com/2025/01/10/high-cost-weight-loss-drugs-boost-nutrition-counseling.html" target="_blank" rel="noopener noreferrer"><b>High cost of weight loss drugs drives employers to require nutrition counseling, in boost for startups</b></a>
+                <p><i>Source:</i> CNBC</p>
+            </h3>
+            <p>Startup Virta Health saw 60% revenue growth last year, topping $100 million, driven by demand for its employer weight loss management program.</p>
+        </li>
+    
+        <li>
+            <img src='https://image.cnbcfm.com/api/v1/image/107206499-1678454271475-gettyimages-1472409493-walgreenswouldnotdispenseanabortionpillin21states007.jpeg?v=1678454390&w=1920&h=1080' alt='Article Image'>
+            <h3>
+                <a href="https://www.cnbc.com/2025/01/10/walgreens-wba-earnings-q1-2025.html" target="_blank" rel="noopener noreferrer"><b>Walgreens shares soar 27% on big earnings beat, as drugstore chain cuts costs</b></a>
+                <p><i>Source:</i> CNBC</p>
+            </h3>
+            <p>Walgreens maintained its fiscal 2025 adjusted earnings guidance, but did not include a sales outlook in its release.</p>
+        </li>
+    
+        <li>
+            <img src='https://image.cnbcfm.com/api/v1/image/108077162-1734465367641-IMG_5550.jpg?v=1734550051&w=1920&h=1080' alt='Article Image'>
+            <h3>
+                <a href="https://www.cnbc.com/2025/01/10/delta-air-lines-dal-4q-2024-earnings.html" target="_blank" rel="noopener noreferrer"><b>Delta outlook tops estimates as CEO expects 2025 to be airline's 'best financial year in our history'</b></a>
+                <p><i>Source:</i> CNBC</p>
+            </h3>
+            <p>Delta's CEO said strong travel demand is driving revenue higher.</p>
+        </li>
+    
+        <li>
+            <img src='https://image.cnbcfm.com/api/v1/image/108083911-1736370171006-AP_blue.jpg?v=1736370458&w=1920&h=1080' alt='Article Image'>
+            <h3>
+                <a href="https://www.cnbc.com/2025/01/10/audemars-piguet-ceo-ilaria-resta-reinvents-luxury-watches.html" target="_blank" rel="noopener noreferrer"><b>How Audemars Piguet CEO Ilaria Resta is disrupting the luxury watch business</b></a>
+                <p><i>Source:</i> CNBC</p>
+            </h3>
+            <p>Audemars Piguet will no longer refer to "men's" or "women's" watches in its boutiques or marketing.</p>
+        </li>
+    
+        <li>
+            <img src='https://image.cnbcfm.com/api/v1/image/108084534-1736470407674-Ford_Jan9.jpg?v=1736471317&w=1920&h=1080' alt='Article Image'>
+            <h3>
+                <a href="https://www.cnbc.com/2025/01/09/ford-ceo-says-china-operations-earned-600-million-in-2024.html" target="_blank" rel="noopener noreferrer"><b>Ford CEO says China operations earned $600 million in 2024</b></a>
+                <p><i>Source:</i> CNBC</p>
+            </h3>
+            <p>Ford Motor's operations in China earned roughly $600 million last year despite challenging market conditions, CEO Jim Farley said Thursday night.</p>
+        </li>
+    
+        <li>
+            <img src='https://image.cnbcfm.com/api/v1/image/108084298-1736439582944-2025_Mustang_GTD_Spirit_of_America_02.jpg?v=1736439665&w=1920&h=1080' alt='Article Image'>
+            <h3>
+                <a href="https://www.cnbc.com/2025/01/09/ford-special-edition-mustang-gtd-spirit-of-america.html" target="_blank" rel="noopener noreferrer"><b>Ford reveals a special edition of its $325,000 Mustang GTD called 'Spirit of America'</b></a>
+                <p><i>Source:</i> CNBC</p>
+            </h3>
+            <p>The GTD models are part of Ford's plans to expand the Mustang nameplate into the higher echelons of the sports car and racing worlds.</p>
+        </li>
+    
+        <li>
+            <img src='https://image.cnbcfm.com/api/v1/image/108083880-1736367696817-gettyimages-2188894446-shin-tourists241212_npQ8f.jpeg?v=1736367842&w=1920&h=1080' alt='Article Image'>
+            <h3>
+                <a href="https://www.cnbc.com/2025/01/09/where-airfare-is-falling-in-2025-cheap-flights.html" target="_blank" rel="noopener noreferrer"><b>From Japan to St. Lucia, here's where airfare is falling in 2025</b></a>
+                <p><i>Source:</i> CNBC</p>
+            </h3>
+            <p>International airfare from the U.S. is trending lower this year while domestic fares are up.</p>
+        </li>
+    
+        <li>
+            <img src='https://image.cnbcfm.com/api/v1/image/107349675-1703017306155-gettyimages-1398246055-pas07725_e62ce560-9a89-449a-a5aa-a1bb0fa08a9a.jpeg?v=1736280474&w=1920&h=1080' alt='Article Image'>
+            <h3>
+                <a href="https://www.cnbc.com/2025/01/08/disney-monthly-active-users-ad-supported-content.html" target="_blank" rel="noopener noreferrer"><b>Disney says about 157 million global users are streaming content with ads</b></a>
+                <p><i>Source:</i> CNBC</p>
+            </h3>
+            <p>Disney announced Wednesday it has about 157 million global monthly active users viewing its ad-supported streaming content across Disney+, Hulu and ESPN+.</p>
+        </li>
+    
+        <li>
+            <img src='https://image.cnbcfm.com/api/v1/image/108052584-1729798560468-Scout_Terra_and_Traveler_Concepts_1.jpg?v=1736369074&w=1920&h=1080' alt='Article Image'>
+            <h3>
+                <a href="https://www.cnbc.com/2025/01/08/scout-motors-electric-vehicles-ev-reservations.html" target="_blank" rel="noopener noreferrer"><b>VW's Scout has more than 50,000 reservations for upcoming EVs as automaker aims to grow U.S. share</b></a>
+                <p><i>Source:</i> CNBC</p>
+            </h3>
+            <p>Volkswagen, which revived the old American brand, said Scout is part of its plan to grow its market share in the U.S.</p>
+        </li>
+    
+        <li>
+            <img src='https://image.cnbcfm.com/api/v1/image/107368557-17069062502023-12-13t123425z_1803569422_rc26v4aidh6r_rtrmadp_0_health-obesity-telehealth.jpeg?v=1724710436&w=1920&h=1080' alt='Article Image'>
+            <h3>
+                <a href="https://www.cnbc.com/2025/01/08/medicare-can-now-cover-eli-lillys-zepbound-for-sleep-apnea-cms-says.html" target="_blank" rel="noopener noreferrer"><b>Medicare can now cover Eli Lilly's Zepbound for sleep apnea, Health Department agency says</b></a>
+                <p><i>Source:</i> CNBC</p>
+            </h3>
+            <p>It opens the door for broader coverage and access to Zepbound, which is not currently covered by Medicare and many other insurance plans for weight loss.</p>
+        </li>
+    
+        <li>
+            <img src='https://image.cnbcfm.com/api/v1/image/108083740-1736357979639-gettyimages-1346227684-dsc_2538copy.jpeg?v=1736358076&w=1920&h=1080' alt='Article Image'>
+            <h3>
+                <a href="https://www.cnbc.com/2025/01/08/nhl-plans-to-host-two-outdoor-games-in-florida-in-2026.html" target="_blank" rel="noopener noreferrer"><b>NHL plans to host two outdoor games in Florida in 2026</b></a>
+                <p><i>Source:</i> CNBC</p>
+            </h3>
+            <p>The National Hockey League is enjoying growth in Florida, where two of its most successful current franchises, the Lightning and Panthers, play.</p>
+        </li>
+    
+        <li>
+            <img src='https://image.cnbcfm.com/api/v1/image/107369887-1707254101322-gettyimages-1990933702-js2_0409_5hq4lntn.jpeg?v=1707254227&w=1920&h=1080' alt='Article Image'>
+            <h3>
+                <a href="https://www.cnbc.com/2025/01/08/used-car-prices-2025.html" target="_blank" rel="noopener noreferrer"><b>Used vehicle prices expected to continue to stabilize in 2025 after pandemic volatility</b></a>
+                <p><i>Source:</i> CNBC</p>
+            </h3>
+            <p>Cox Automotive expects wholesale prices on its Manheim Used Vehicle Value Index will end this year 1.4% higher than in December 2024.</p>
+        </li>
+    
+        <li>
+            <img src='https://image.cnbcfm.com/api/v1/image/107191806-1675949151013-gettyimages-1464264051-mt_13626_50aefcdc-8576-4345-bf34-90f217e400a3.jpeg?v=1736282532&w=1920&h=1080' alt='Article Image'>
+            <h3>
+                <a href="https://www.cnbc.com/2025/01/07/delta-loyalty-program-uber.html" target="_blank" rel="noopener noreferrer"><b>Delta links its loyalty program to Uber, ending partnership with Lyft</b></a>
+                <p><i>Source:</i> CNBC</p>
+            </h3>
+            <p>Starting this spring, Delta SkyMiles members will be able to earn loyalty points for Uber rides.</p>
+        </li>
+    
+        <li>
+            <img src='https://image.cnbcfm.com/api/v1/image/107374150-1708008818305-PNG-image.jpg?v=1708008829&w=1920&h=1080' alt='Article Image'>
+            <h3>
+                <a href="https://www.cnbc.com/2025/01/07/true-religion-acquired-by-pe-firm-jay-schottenstein-firm.html" target="_blank" rel="noopener noreferrer"><b>Jeans brand True Religion acquired by PE firm, American Eagle-linked investment group</b></a>
+                <p><i>Source:</i> CNBC</p>
+            </h3>
+            <p>True Religion, the Y2K-era jeans brand in the midst of a comeback, has been acquired by private equity firm ACON Investments and its partner SB360 Capital.</p>
+        </li>
+    
+        <li>
+            <img src='https://image.cnbcfm.com/api/v1/image/108083057-1736263447255-01_Honda_0_Saloon__Honda_0_SUV_copy.jpg?v=1736277852&w=1920&h=1080' alt='Article Image'>
+            <h3>
+                <a href="https://www.cnbc.com/2025/01/07/honda-0-series-evs-electric-vehicles.html" target="_blank" rel="noopener noreferrer"><b>Honda reveals two new '0 Series' EVs to be produced in Ohio</b></a>
+                <p><i>Source:</i> CNBC</p>
+            </h3>
+            <p>The vehicles are the Honda 0 Saloon, which is an updated version of a concept car revealed last year at CES, and the Honda 0 SUV.</p>
+        </li>
+    
+        <li>
+            <img src='https://image.cnbcfm.com/api/v1/image/107252037-1686076459249-gettyimages-871842306-98374975.jpeg?v=1736269175&w=1920&h=1080' alt='Article Image'>
+            <h3>
+                <a href="https://www.cnbc.com/2025/01/07/panera-brands-ceo-jose-duenas-steps-down-cfo-to-fill-in.html" target="_blank" rel="noopener noreferrer"><b>Panera Brands CEO steps down, CFO to fill in as interim chief</b></a>
+                <p><i>Source:</i> CNBC</p>
+            </h3>
+            <p>The restaurant company, which also includes Einstein Bros. and Caribou Coffee, has been attempting to go public over the last few years.</p>
+        </li>
+    
+        <li>
+            <img src='https://image.cnbcfm.com/api/v1/image/108037191-17268464582024-09-20t143457z_1090273618_rc2s1u99zuju_rtrmadp_0_usa-fed.jpeg?v=1726846762&w=1920&h=1080' alt='Article Image'>
+            <h3>
+                <a href="https://www.cnbc.com/2025/01/07/fed-michael-barr-clears-way-gentler-banking-regulator.html" target="_blank" rel="noopener noreferrer"><b>Wall Street notches another win as Fed's Barr clears the way for gentler banking regulator</b></a>
+                <p><i>Source:</i> CNBC</p>
+            </h3>
+            <p>With Barr's resignation, a more precise image of incoming bank deregulation is forming.</p>
+        </li>
+    
+        <li>
+            <img src='https://image.cnbcfm.com/api/v1/image/108077723-1734546997432-gettyimages-2185023724-economou-notitle241112_npv8v.jpeg?v=1734547126&w=1920&h=1080' alt='Article Image'>
+            <h3>
+                <a href="https://www.cnbc.com/2025/01/07/frontier-airlines-flights-new-york-miami-los-angeles-dallas.html" target="_blank" rel="noopener noreferrer"><b>Frontier plans new flights from JFK to big American Airlines hubs Miami, LA and Dallas</b></a>
+                <p><i>Source:</i> CNBC</p>
+            </h3>
+            <p>Frontier said fares would start as low as $19 for JFK-Miami service.</p>
+        </li>
+    
+        <li>
+            <img src='https://image.cnbcfm.com/api/v1/image/108083027-1736261600149-Screenshot_2025-01-07_at_95243_AM.png?v=1736261879&w=1920&h=1080' alt='Article Image'>
+            <h3>
+                <a href="https://www.cnbc.com/2025/01/07/puma-challenges-tiger-woods-sun-day-red-logo.html" target="_blank" rel="noopener noreferrer"><b>Puma challenges Tiger Woods' Sun Day Red logo</b></a>
+                <p><i>Source:</i> CNBC</p>
+            </h3>
+            <p>The German sneaker and apparel company says the Sun Day Red logo is too similar to the logo that Puma has been using since 1969.</p>
+        </li>
+    
+        <li>
+            <img src='https://image.cnbcfm.com/api/v1/image/106870814-1618920749172-gettyimages-1312652113-47938865.jpeg?v=1736265165&w=1920&h=1080' alt='Article Image'>
+            <h3>
+                <a href="https://www.cnbc.com/2025/01/07/jj-says-lung-cancer-drugs-rybrevant-and-lazcluze-extend-survival.html" target="_blank" rel="noopener noreferrer"><b>J&J says its lung cancer drug combination keeps people alive longer</b></a>
+                <p><i>Source:</i> CNBC</p>
+            </h3>
+            <p>Johnson & Johnson said its lung cancer regimen – Rybrevant plus Lazcluze – keeps people alive for at least a year longer than AstraZeneca's Tagrisso.</p>
+        </li>
+    
+        <li>
+            <img src='https://image.cnbcfm.com/api/v1/image/108081969-1735925319773-gettyimages-1744124538-252-0350.jpeg?v=1735925410&w=1920&h=1080' alt='Article Image'>
+            <h3>
+                <a href="https://www.cnbc.com/2025/01/07/online-holiday-spending-rises-with-discounts-ai-chatbots-adobe-says.html" target="_blank" rel="noopener noreferrer"><b>Online holiday spending rises nearly 9%, as deep discounts and AI-powered chatbots fuel purchases, Adobe data says</b></a>
+                <p><i>Source:</i> CNBC</p>
+            </h3>
+            <p>The holiday e-commerce results from Adobe are a promising sign for the retail industry, which will begin reporting holiday results in February.</p>
+        </li>
+    
+        <li>
+            <img src='https://image.cnbcfm.com/api/v1/image/108083105-1736267857780-BMW.JPG?v=1736273035&w=1920&h=1080' alt='Article Image'>
+            <h3>
+                <a href="https://www.cnbc.com/2025/01/07/bmw-new-panoramic-display.html" target="_blank" rel="noopener noreferrer"><b>BMW to install new 'panoramic' display in all vehicles</b></a>
+                <p><i>Source:</i> CNBC</p>
+            </h3>
+            <p>BMW revealed its new Panoramic iDrive system, including windshield-length display, and BMW Operating System X on Tuesday during the CES tech show.</p>
+        </li>
+    
+        </ul>
+    </div>
+
+<footer>
+This information is provided for informational purposes only. This is not for advice.
+<br><br>
+Please let us know if you have any suggestions, including data series or metrics we could add to Real CPI.
+<br><br>
+Copyright © 2024
+&nbsp;
+&nbsp;
+&nbsp;
+&nbsp;
+<a href="mailto:contact@realcpi.org">contact@realcpi.org</a>
+</footer>
+
+</body>
+</html>
