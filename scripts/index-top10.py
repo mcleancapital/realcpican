@@ -66,6 +66,16 @@ def update_sp500_html(html_file, excel_file, output_file):
             section_content[value_end:]
         )
 
+        # Update the date <div> within this section
+        date_marker = '<div class="date">'
+        date_start = updated_section.find(date_marker) + len(date_marker)
+        date_end = updated_section.find("</div>", date_start)
+        updated_section = (
+            updated_section[:date_start] +
+            last_update_date +
+            updated_section[date_end:]
+        )
+        
         # Replace the original section in the HTML
         html_content = (
             html_content[:marker_start] +
