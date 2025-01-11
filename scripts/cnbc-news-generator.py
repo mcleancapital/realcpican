@@ -2,8 +2,8 @@ import feedparser
 from bs4 import BeautifulSoup
 import requests
 
-# Financial Post Business News RSS Feed URL
-RSS_FEED_URL = "https://financialpost.com/category/business/feed/"
+# CNBC Business News RSS Feed URL
+RSS_FEED_URL = "https://search.cnbc.com/rs/search/combinedcms/view.xml?partnerId=wrss01&id=10001147"
 
 # Parse the RSS feed
 feed = feedparser.parse(RSS_FEED_URL)
@@ -15,7 +15,7 @@ html_content = """
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Top Canadian Business News</title>
+    <title>Top Business News</title>
     <style>
         body {
             font-family: garamond, sans-serif;
@@ -59,7 +59,7 @@ html_content = """
 </head>
 <body>
     <div id="news-section">
-        <h2>Top Canadian Business News</h2>
+        <h2>Top Business News</h2>
         <ul>
 """
 
@@ -90,7 +90,7 @@ for entry in feed.entries[:15]:  # Fetch the latest 15 articles
             {"<img src='" + image_url + "' alt='Article Image'>" if image_url else ""}
             <h3>
                 <a href="{article_url}" target="_blank" rel="noopener noreferrer"><b>{entry.title}</b></a>
-                <p><i>Source:</i> Financial Post</p>
+                <p><i>Source:</i> CNBC</p>
             </h3>
             <p>{entry.summary}</p>
         </li>
@@ -109,4 +109,4 @@ output_file = "news.html"
 with open(output_file, "w", encoding="utf-8") as file:
     file.write(html_content)
 
-print(f"{output_file} has been updated with the latest news from Financial Post.")
+print(f"{output_file} has been updated with the latest news from CNBC.")
