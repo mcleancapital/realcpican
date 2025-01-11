@@ -1,0 +1,405 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3345310399251053"
+        crossorigin="anonymous"></script>
+
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-97F7RYQNKC"></script>
+    <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    gtag('config', 'G-97F7RYQNKC');
+    </script>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>S&P/TSX Sectors</title>
+    <meta property="og:site_name" content="Real CPI" />
+    <link rel="icon" type="image/png" href="/static/images/favicon.png">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <style>
+
+.sector-total {
+    background-color: #f0f0f0; /* Light grey background */
+    font-weight: bold; /* Make the text bold */
+    border-top: 2px solid #ccc; /* Optional: Add a top border to distinguish the row */
+}
+        body {
+            font-family: "Garamond", serif;
+            margin: 0;
+            padding: 0;
+            background-color: #ffffff;
+            color: #333;
+        }
+
+        header {
+            display: flex;
+            align-items: center;
+            justify-content: flex-start;
+            padding: 10px 20px;
+            background-color: #ffffff;
+            box-shadow: 0 1px 0 rgb(0 0 0 / 8%);
+        }
+
+        header #logo img {
+            height: 50px;
+            margin-right: 15px;
+        }
+
+        #tag {
+            flex: 1;
+            font-weight: 700;
+            text-align: left;
+        }
+
+        .page-container {
+            margin-top: 0.5in;
+	    margin-bottom: 2in;
+            margin-left: 1.5in;
+            margin-right: 1.5in;
+	    padding-top: 20px; /* Add padding to avoid cutoff by the mobile menu */
+	    padding-bottom: 30px; /* Add padding to avoid cutoff by the mobile menu */
+            background-color: #ffffff;
+        }
+
+        .container {
+            display: flex;
+            flex-wrap: nowrap;
+            justify-content: space-between;
+            align-items: flex-start; /* Align both sections vertically */
+            width: 100%;
+            min-height: 100vh;
+        }
+
+        .chart-container {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            margin: 0;
+            padding: 0;
+        }
+
+        .chart-container canvas {
+            width: 85%;
+            height: auto;
+        }
+
+        .chart-container h1 {
+            margin: 0 0 20px 0; /* Consistent bottom margin */
+            font-size: 24px;
+            color: #000000;
+        }
+
+        .sectors-list {
+            flex: 1;
+            margin: 0;
+            padding: 0;
+            overflow-y: auto;
+        }
+
+        .sectors-list h1 {
+            margin: 0 0 20px 0; /* Consistent bottom margin */
+            font-size: 24px;
+            color: #000000;
+        }
+
+        .sectors-list h3 {
+            font-size: 16px;
+            margin-bottom: 20px;
+            color: #555;
+        }
+
+        .sector-item {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 5px 50px;
+            border-bottom: 1px solid #e0e0e0;
+        }
+
+        .sector-item:last-child {
+            border-bottom: none;
+        }
+
+        .sector-name {
+            font-weight: bold;
+        }
+
+        .sector-return {
+            background-color: #cce5ff;
+            color: #0044cc;
+            padding: 2px 8px;
+            border-radius: 5px;
+            font-weight: bold;
+        }
+
+        footer {
+            text-align: center;
+            padding: 10px 20px;
+            font-size: 12px;
+            color: #717171;
+        }
+
+/* Desktop responsiveness */
+        @media (min-width: 729px) {
+            .mobile-menu {
+                display: none;
+            }
+}
+
+
+        /* Mobile responsiveness */
+        @media (max-width: 729px) {
+	    .mobile-menu {
+                display: flex;
+                justify-content: space-around;
+                position: fixed;
+                top: 0;
+                left: 0;
+                width: 100%;
+                background-color: #ffffff;
+                border-bottom: 1px solid #ccc;
+                z-index: 1000;
+                padding: 7px 0;
+		font-size: 16px; /* Adjust font size if needed */
+            }
+
+		#mobile-menu button {
+    		margin: 0; /* Remove margin between buttons */
+    		padding: 5px 10px; /* Reduce padding for a tighter appearance */
+    		font-size: 16px; /* Adjust font size if needed */
+    		border: none;
+    		background-color: #ffffff;
+    		cursor: pointer;
+    		transition: background-color 0.3s ease;
+		}          
+
+	    #tag {
+                display: none;
+            }
+
+	    header {
+                display: none;
+            }
+
+            .container {
+                flex-direction: column; /* Stack sections vertically */
+                align-items: center; /* Center child elements */
+            }
+
+            .chart-container {
+                order: 2; /* Move the chart container after the sector list */
+                margin-top: 20px;
+		margin-bottom: 10px;
+            }
+
+            .chart-container canvas {
+                width: 100%;
+                max-width: 350px;
+                height: auto;
+                margin: 0 auto;
+            }
+
+            .sectors-list {
+                order: 1;
+                width: 100%;
+                margin-bottom: 20px;
+            }
+
+            .page-container {
+                margin-left: 10px;
+                margin-right: 10px;
+        	padding-top: 40px; /* For mobile menu */
+        	padding-bottom: 100px; /* To ensure space above footer */
+            }
+            footer {
+            text-align: center;
+            padding: 5px 5px;
+            font-size: 12px;
+            color: #717171;
+            }
+
+        }
+    </style>
+</head>
+<header>
+    <a id="logo" href="/">
+        <img src="/static/images/logo.jpg" alt="Real CPI Logo">
+    </a>
+    <div id="tag">
+        Canadian economic, market, and financial data.&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<div style="font-size: 14px; text-align: center; padding: 3px; border: 1px solid #ccc; border-radius: 5px; background-color: #f9f9f9; display: inline-block;">
+<a href="index.html" style="text-decoration: none;">Back to Data Page</a></div>
+    </div>
+</header>
+<body>
+
+
+
+    <div class="page-container">
+
+<div class="mobile-menu">
+    <a id="logo" href="/"><img src="/static/images/logo.jpg" alt="Real CPI Logo" height="54" /></a>
+</div>
+	    
+        <div class="container">
+
+
+
+            <!-- Pie Chart -->
+            <div class="chart-container">
+                <h1>S&P/TSX Sector Weights</h1>
+                <canvas id="sectorPieChart"></canvas>
+            </div>
+
+            <!-- Sector List -->
+            <div class="sectors-list">
+                <h1>S&P/TSX Sector Returns Year-to-Date</h1>
+                <h3>(Last update: Jan 10, 2025)</h3>
+<div id="sectors-container">
+                <div class="sector-item">
+                    <span class="sector-name">Energy</span>
+                    <span class="sector-return">2.86%</span>
+                </div>
+                <div class="sector-item">
+                    <span class="sector-name">Materials</span>
+                    <span class="sector-return">-0.97%</span>
+                </div>
+                <div class="sector-item">
+                    <span class="sector-name">Industrials</span>
+                    <span class="sector-return">-0.28%</span>
+                </div>
+                <div class="sector-item">
+                    <span class="sector-name">Consumer Discretionary</span>
+                    <span class="sector-return">-1.23%</span>
+                </div>
+                <div class="sector-item">
+                    <span class="sector-name">Consumer Staples</span>
+                    <span class="sector-return">1.52%</span>
+                </div>
+                <div class="sector-item">
+                    <span class="sector-name">Health Care</span>
+                    <span class="sector-return">-2.24%</span>
+                </div>
+                <div class="sector-item">
+                    <span class="sector-name">Financials</span>
+                    <span class="sector-return">-2.15%</span>
+                </div>
+                <div class="sector-item">
+                    <span class="sector-name">Technology</span>
+                    <span class="sector-return">-1.73%</span>
+                </div>
+                <div class="sector-item">
+                    <span class="sector-name">Communications</span>
+                    <span class="sector-return">0.73%</span>
+                </div>
+                <div class="sector-item">
+                    <span class="sector-name">Utilities</span>
+                    <span class="sector-return">-0.16%</span>
+                </div>
+                <div class="sector-item">
+                    <span class="sector-name">Real Estate</span>
+                    <span class="sector-return">-4.36%</span>
+                </div>
+    		<div class="sector-item sector-total">
+        	    <span class="sector-name">Total</span>
+        	    <span class="sector-return">-0.93%</span>
+   		</div>
+            </div>
+        </div>
+    </div>
+</div>
+
+    <script>
+        // Pie Chart Data
+        const data = {
+            labels: [
+                "Energy", "Materials", "Industrials", 
+                "Consumer Discretionary", "Consumer Staples", 
+                "Health Care", "Financials", "Technology", 
+                "Communications", "Utilities", "Real Estate"
+            ],
+            datasets: [{
+                data: [17.1, 11.4, 11.4, 3.8, 4.2, 1.1, 30.0, 8.3, 4.9, 4.8, 3.0],
+                backgroundColor: [
+                    "#0044cc", "#0056e0", "#0068f5", 
+                    "#007aff", "#339aff", "#66bbff", 
+                    "#99ccff", "#cce5ff", "#b3d9ff", 
+                    "#80c0ff", "#339aff"
+                ],
+                hoverBackgroundColor: [
+                    "#0033a1", "#0044bb", "#0055d6", 
+                    "#0066f0", "#1a85ff", "#4daeff", 
+                    "#80c0ff", "#b3d9ff", "#a6d2ff", 
+                    "#99ccff", "#0044cc"
+                ]
+            }]
+        };
+
+        const config = {
+            type: 'pie',
+            data: data,
+            options: {
+                responsive: true,
+                plugins: {
+                    legend: {
+                        position: 'bottom',
+                        labels: {
+                            padding: 5
+                        }
+                    },
+                    tooltip: {
+                        callbacks: {
+                            label: function(context) {
+                                let label = context.label || '';
+                                let value = context.raw || 0;
+                                return `${label}: ${value}%`;
+                            }
+                        }
+                    }
+                }
+            }
+        };
+
+        const ctx = document.getElementById('sectorPieChart').getContext('2d');
+        new Chart(ctx, config);
+    </script>
+
+<script>
+document.addEventListener('DOMContentLoaded', function () {
+    const sectorsContainer = document.getElementById('sectors-container');
+    const sectorItems = Array.from(sectorsContainer.getElementsByClassName('sector-item'));
+    const totalElement = document.querySelector('.sector-total');
+
+    // Function to sort sectors by return percentage
+    function sortSectors() {
+        // Exclude the total row from sorting
+        const itemsToSort = sectorItems.filter(item => !item.classList.contains('sector-total'));
+
+        itemsToSort.sort((a, b) => {
+            const returnA = parseFloat(a.querySelector('.sector-return').textContent.replace('%', ''));
+            const returnB = parseFloat(b.querySelector('.sector-return').textContent.replace('%', ''));
+            return returnB - returnA; // Sort descending
+        });
+
+        // Re-append sorted items to the container
+        itemsToSort.forEach(item => sectorsContainer.appendChild(item));
+
+        // Re-append the total row to ensure it's always at the bottom
+        sectorsContainer.appendChild(totalElement);
+    }
+
+    // Call the function to sort sectors on page load
+    sortSectors();
+});
+</script>
+
+</body>
+<footer>
+    <p>© 2025 Real CPI - United States Economic and Financial Data</p>
+</footer>
+</html>
