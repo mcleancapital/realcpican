@@ -1,0 +1,36 @@
+name: Pages - TSX Price
+
+on:
+  schedule:
+    - cron: "10 11 * * *"  # Run daily at 11:10 AM UTC (6:10 AM ET)
+  workflow_dispatch:  # Allows manual triggering if needed
+
+permissions:
+  contents: write
+
+jobs:
+  update-html:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v3
+
+      - name: Set up Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: '3.x'
+
+      - name: Install dependencies
+        run: pip install pandas openpyxl
+
+      - name: Run Python script
+        run: python scripts/pages-tsx.py
+
+      - name: Commit and push changes
+        run: |
+          git config --global user.name "GitHub Actions Bot"
+          git config --global user.email "actions@github.com"
+          git add ./tsx-historical-prices/index.html
+          git commit -m "Updated HTML with latest data"
+          git push
