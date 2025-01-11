@@ -53,9 +53,9 @@ html_content = html_content.replace("1.4%", returns[3])   # Enbridge
 html_content = html_content.replace("0.4%", returns[5])   # BMO
 html_content = html_content.replace("3.3%", returns[4])   # Bank of Nova Scotia
 html_content = html_content.replace("-5.4%", returns[6])  # Canadian National Railway
-html_content = html_content.replace("0.4%", returns[7])   # Canadian Natural Resources
-html_content = html_content.replace("3.3%", returns[8])   # Thomson Reuters
-html_content = html_content.replace("-5.4%", returns[9])  # Suncor
+html_content = html_content.replace("0.2%", returns[7])   # Canadian Natural Resources
+html_content = html_content.replace("0.3%", returns[8])   # Thomson Reuters
+html_content = html_content.replace("0.5%", returns[9])  # Suncor
 
 # Replace the total return
 html_content = html_content.replace("10.0%", total_average_str)
