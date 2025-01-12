@@ -47,7 +47,7 @@ def update_sp500_html(html_file, excel_file, output_file):
 
         # Step 3: Update the data section in HTML
         print("Step 3: Updating the data section in HTML...")
-        data_marker = "<!-- Canada Home Prices -->"
+        data_marker = "<!-- Home Prices -->"
         if data_marker in html_content:
             data_start = html_content.find(data_marker) + len(data_marker)
             data_end = html_content.find("]]", data_start) + 2  # Locate the end of the array
