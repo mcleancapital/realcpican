@@ -3,7 +3,7 @@ from datetime import datetime
 from yfinance import Ticker
 
 # Define the stock symbols and the Excel file path
-stock_symbols = ["RY.to", "SHOP.to", "TD.to", "ENB.to", "BNS.to", "BMO.to", "CNR.to", "CNQ.to", "TRI.to", "SU.to"]
+stock_symbols = ["RY.to", "SHOP.to", "TD.to", "ENB.to", "BNS.to", "BMO.to", "CP.to", "CNQ.to", "TRI.to", "BN.to"]
 excel_file_path = './data/top10.xlsx'
 
 # Function to fetch the most recent data (date and price) for a stock
