@@ -22,7 +22,7 @@ jobs:
           python-version: '3.x'
 
       - name: Install dependencies
-        run: pip install pandas openpyxl beautifulsoup4
+        run: pip install pandas openpyxl beautifulsoup4 re
 
       - name: Run Python script
         run: python scripts/pages-cpi.py
