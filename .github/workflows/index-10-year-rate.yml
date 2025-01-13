@@ -30,7 +30,7 @@ jobs:
 
       # Step 4: Run the update script
       - name: Run the update script
-        run: python scripts/index_10-year-rate.py
+        run: python scripts/index-10-year-rate.py
 
       # Step 5: Commit and push changes
       - name: Commit and push changes
