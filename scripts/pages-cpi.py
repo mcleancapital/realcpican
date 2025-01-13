@@ -49,17 +49,18 @@ for script in script_tags:
         script.string = pi_data
         break
 
+# Update the current values and percentage change
+html_content = re.sub(
+    r"<b>Current <span class=\"currentTitle\">.*?</span>:</b>.*?\(.*?\)",
+    f"<b>Current <span class=\"currentTitle\">Canada Inflation Rate</span>:</b> {latest_volume:,}% ({formatted_percentage_change} vs last year)",
+    html_content,
+    flags=re.DOTALL
+)
+
 # Update the timestamp
 timestamp_div = soup.find("div", {"id": "timestamp"})
 if timestamp_div:
     timestamp_div.string = latest_date.strftime("%b %Y")
-
-# Update the current values and percentage change
-current_div = soup.find("div", {"id": "current"})
-if current_div:
-    current_b = current_div.find("b")
-    if current_b:
-        current_b.string = f"Current Canada Inflation Rate: {latest_volume:.2f}% ({formatted_percentage_change} vs last year)"
 
 # Update the historical average in the stats table
 historical_avg_td = soup.select_one("table#stats td.left + td")
