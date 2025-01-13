@@ -1,9 +1,9 @@
 import pandas as pd
 from openpyxl import load_workbook
 from datetime import datetime
-import re
+from bs4 import BeautifulSoup
 
-# Paths for the files
+# File paths
 excel_file = './data/cpi.xlsx'
 html_template = './inflation/index.html'
 output_html = './inflation/index.html'
@@ -19,7 +19,7 @@ latest_volume = data.iloc[-1]["Value"]
 
 # Read cell C2 for '% Change vs Last Year' using openpyxl
 try:
-    wb = load_workbook(excel_file, data_only=True)  # data_only=True retrieves evaluated formula values
+    wb = load_workbook(excel_file, data_only=True)
     sheet = wb["Data"]
     latest_percentage_change = sheet["C2"].value  # Retrieve the value of cell C2
     print(f"Value of C2 (openpyxl): {latest_percentage_change}")
@@ -27,10 +27,10 @@ except Exception as e:
     print(f"Error reading C2 with openpyxl: {e}")
     latest_percentage_change = None
 
-# Handle cases where C2 is None or invalid
+# Format percentage change
 formatted_percentage_change = f"{latest_percentage_change:+.1f}%" if latest_percentage_change else "N/A"
 
-# Format the "let pi" data
+# Prepare "let pi" data
 dates_since_reference = (data["Date"] - datetime(1969, 12, 20)).dt.days.tolist()
 monthly_totals = data["Value"].tolist()
 pi_data = f"let pi = [{dates_since_reference}, {monthly_totals}, null, null, '%', 0, []];"
@@ -39,25 +39,35 @@ pi_data = f"let pi = [{dates_since_reference}, {monthly_totals}, null, null, '%'
 with open(html_template, "r", encoding="utf-8") as file:
     html_content = file.read()
 
-# Replace "let pi" data
-html_content = re.sub(r"let pi = \[.*?\];", pi_data, html_content, flags=re.DOTALL)
+# Parse the HTML using BeautifulSoup
+soup = BeautifulSoup(html_content, "html.parser")
 
-# Replace the values and percentage change
-html_content = re.sub(
-    r"<b>Current <span class=\"currentTitle\">.*?</span>:</b>.*?\(.*?\)",
-    f"<b>Current <span class=\"currentTitle\">Canada Inflation Rate</span>:</b> {latest_volume:.2f}% ({formatted_percentage_change} vs last year)",
-    html_content,
-    flags=re.DOTALL
-)
+# Update the "let pi" data
+script_tags = soup.find_all("script")
+for script in script_tags:
+    if "let pi = [" in script.text:
+        script.string = pi_data
+        break
 
 # Update the timestamp
-html_content = re.sub(
-    r"<div id=\"timestamp\">.*?</div>",
-    f"<div id=\"timestamp\">{latest_date.strftime('%b %Y')}</div>",
-    html_content,
-    flags=re.DOTALL
-)
+timestamp_div = soup.find("div", {"id": "timestamp"})
+if timestamp_div:
+    timestamp_div.string = latest_date.strftime("%b %Y")
 
-# Save the updated HTML locally
+# Update the current values and percentage change
+current_div = soup.find("div", {"id": "current"})
+if current_div:
+    current_b = current_div.find("b")
+    if current_b:
+        current_b.string = f"Current Canada Inflation Rate: {latest_volume:.2f}% ({formatted_percentage_change} vs last year)"
+
+# Update the historical average in the stats table
+historical_avg_td = soup.select_one("table#stats td.left + td")
+if historical_avg_td:
+    historical_avg_td.string = "3%"
+
+# Save the updated HTML
 with open(output_html, "w", encoding="utf-8") as file:
-    file.write(html_content)
+    file.write(str(soup))
+
+print("HTML updated successfully!")
