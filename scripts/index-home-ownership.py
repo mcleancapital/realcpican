@@ -38,7 +38,7 @@ def update_sp500_html(html_file, excel_file, output_file):
         most_recent_change = df.iloc[-1]["% Change vs Last Year"]
 
         # Format the date, value, and change
-        formatted_date = most_recent_date.strftime("4:00 PM EST, %a %b %d")
+        formatted_date = most_recent_date.strftime("%b %Y")
         formatted_value = f"{most_recent_value:,.2f}%"
         formatted_change = f"({most_recent_change:,.2f}% vs last year)"
 
