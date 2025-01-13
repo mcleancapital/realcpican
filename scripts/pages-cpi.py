@@ -1,4 +1,5 @@
 import pandas as pd
+import re
 from openpyxl import load_workbook
 from datetime import datetime
 from bs4 import BeautifulSoup
