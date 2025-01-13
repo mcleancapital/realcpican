@@ -37,7 +37,7 @@ def update_sp500_html(html_file, excel_file, output_file):
         most_recent_value = df.iloc[-1]["Value"]
 
         # Format the date into "4:00 PM EST, Fri Dec 13" format
-        formatted_date = most_recent_date.strftime("4:00 PM EST, %a %b %d")
+        formatted_date = most_recent_date.strftime("%b %Y")
         formatted_value = f"{most_recent_value:,.2f}"
 
         print("Step 2: Reading HTML file...")
