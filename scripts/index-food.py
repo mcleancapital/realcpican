@@ -29,7 +29,7 @@ def update_sp500_html(html_file, excel_file, output_file):
         formatted_dates = ", ".join(map(str, date_array))
         formatted_values = ", ".join(map(str, value_array))
 
-        # Combine the formatted array with the required suffix
+        # Combine the full arrays with the required suffix
         formatted_data = f"[[{formatted_dates}], [{formatted_values}], null, null, '', 1, []]"
 
         # Get the most recent date, value, and "% Change vs Last Year"
@@ -64,12 +64,12 @@ def update_sp500_html(html_file, excel_file, output_file):
             print(f"Data section marker '{data_marker}' not found in HTML.")
             return
 
-        # Step 4: Locate the specific section for 10-Year Treasury Rate
+        # Step 4: Locate the specific section for Food
         print("Step 4: Updating the specific section for Food...")
         sp500_marker = '<a class=box href="/food">'
         marker_start = html_content.find(sp500_marker)
         if marker_start == -1:
-            print("Marker for 10-Year Treasury Rate not found in the HTML.")
+            print("Marker for Food not found in the HTML.")
             return
 
         # Locate the end of this section
