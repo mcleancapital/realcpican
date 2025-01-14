@@ -25,6 +25,10 @@ def update_sp500_html(html_file, excel_file, output_file):
         date_array = df["Date_Numeric"].tolist()
         value_array = df["Value"].tolist()
 
+        # Ensure both arrays are populated
+        if not date_array or not value_array:
+            raise ValueError("The arrays for dates and values are empty. Please check the Excel data.")
+
         # Format arrays as strings
         formatted_dates = ", ".join(map(str, date_array))
         formatted_values = ", ".join(map(str, value_array))
