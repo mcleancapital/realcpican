@@ -39,7 +39,7 @@ def update_sp500_html(html_file, excel_file, output_file):
 
         # Format the date, value, and change
         formatted_date = most_recent_date.strftime("%b %Y")
-        formatted_value = f"{most_recent_value:,}B"
+        formatted_value = f"{most_recent_value:,}M"
         formatted_change = f"(+{most_recent_change:,.1f}% vs last year)"
 
         print("Step 2: Reading HTML file...")
@@ -65,7 +65,7 @@ def update_sp500_html(html_file, excel_file, output_file):
             return
 
         # Step 4: Locate the specific section for 10-Year Treasury Rate
-        print("Step 4: Updating the specific section for 10-Year Treasury Rate...")
+        print("Step 4: Updating the specific section for Food...")
         sp500_marker = '<a class=box href="/food">'
         marker_start = html_content.find(sp500_marker)
         if marker_start == -1:
