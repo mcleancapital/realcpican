@@ -31,7 +31,7 @@ jobs:
 
       # Run the Python script
       - name: Run update script
-        run: python scripts/10-year-rate-Excel.py
+        run: python scripts/excel-10-year-rate.py
 
       # Commit and push changes
       - name: Commit and push changes
