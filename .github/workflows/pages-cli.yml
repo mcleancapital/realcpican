@@ -1,6 +1,8 @@
 name: Pages - CLI
 
 on:
+  schedule:
+    - cron: '10 8 12 * *'  # Run on the 12th of every month at 08:10 UTC
   workflow_dispatch:  # Allows manual triggering if needed
 
 permissions:
