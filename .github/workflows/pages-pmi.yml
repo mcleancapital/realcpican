@@ -23,7 +23,7 @@ jobs:
         run: pip install pandas openpyxl
 
       - name: Run Python script
-        run: python scripts/pages-health.py
+        run: python scripts/pages-pmi.py
 
       - name: Commit and push changes
         run: |
