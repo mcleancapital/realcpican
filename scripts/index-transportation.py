@@ -70,10 +70,10 @@ def update_sp500_html(html_file, excel_file, output_file):
 
         # Step 4: Locate the specific section for Food
         print("Step 4: Updating the specific section for Food...")
-        sp500_marker = '<a class=box href="transportation">'
+        sp500_marker = '<a class=box href="/transportation">'
         marker_start = html_content.find(sp500_marker)
         if marker_start == -1:
-            print("Marker for Food not found in the HTML.")
+            print("Marker for Transportation not found in the HTML.")
             return
 
         # Locate the end of this section
