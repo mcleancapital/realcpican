@@ -8,7 +8,7 @@ def update_sp500_html(html_file, excel_file, output_file):
         df = pd.read_excel(excel_file, sheet_name="Data", usecols=["Date", "Value", "% Change vs Last Year"], header=0)
 
         # Drop rows where 'Date' or 'Value' is missing
-        df = df.dropna(subset=["Date", "Value")
+        df = df.dropna(subset=["Date", "Value"])
 
         # Convert 'Date' to datetime
         df["Date"] = pd.to_datetime(df["Date"], errors="coerce")
