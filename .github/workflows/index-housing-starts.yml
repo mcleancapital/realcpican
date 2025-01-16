@@ -38,5 +38,5 @@ jobs:
           git config --global user.name "GitHub Actions Bot"
           git config --global user.email "actions@github.com"
           git add ./index.html
-          git commit -m "Automated update of Food Sales data"
+          git commit -m "Automated update of Housing Starts data"
           git push
