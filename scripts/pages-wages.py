@@ -26,10 +26,10 @@ pi_data = f"let pi = [{dates_since_reference}, {monthly_totals}, null, null, '%'
 with open(html_template, "r", encoding="utf-8") as file:
     html_content = file.read()
 
-# Replace "let pi" data
+# Replace "let pi" data (only this part is modified)
 html_content = re.sub(r"let pi = \[.*?\];", pi_data, html_content, flags=re.DOTALL)
 
-# Replace the values
+# Update the current volume value (for "Canada Wages Growth")
 html_content = re.sub(
     r"<b>Current <span class=\"currentTitle\">.*?</span>:</b>.*?\(.*?\)",
     f"<b>Current <span class=\"currentTitle\">Canada Wages Growth</span>:</b> {latest_volume:,}%",
@@ -37,7 +37,7 @@ html_content = re.sub(
     flags=re.DOTALL
 )
 
-# Update the timestamp
+# Update the timestamp (ensure this section isn't affected by column C changes)
 html_content = re.sub(
     r"<div id=\"timestamp\">.*?</div>",
     f"<div id=\"timestamp\">{latest_date.strftime('%b %Y')}</div>",
@@ -45,6 +45,6 @@ html_content = re.sub(
     flags=re.DOTALL
 )
 
-# Save the updated HTML locally
+# Save the updated HTML locally (ensure other parts of the HTML remain intact)
 with open(output_html, "w", encoding="utf-8") as file:
     file.write(html_content)
