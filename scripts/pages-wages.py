@@ -15,7 +15,7 @@ data.sort_values(by="Date", inplace=True)
 
 # Calculate the latest values
 latest_date = data.iloc[-1]["Date"]
-latest_volume = data.iloc[-1]["% Change vs Last Year"]
+latest_volume = data.iloc[-1]["Value"]
 
 # Format the "let pi" data
 dates_since_reference = (data["Date"] - datetime(1969, 12, 20)).dt.days.tolist()
@@ -29,10 +29,10 @@ with open(html_template, "r", encoding="utf-8") as file:
 # Replace "let pi" data
 html_content = re.sub(r"let pi = \[.*?\];", pi_data, html_content, flags=re.DOTALL)
 
-# Replace the values and percentage change
+# Replace the values
 html_content = re.sub(
     r"<b>Current <span class=\"currentTitle\">.*?</span>:</b>.*?\(.*?\)",
-    f"<b>Current <span class=\"currentTitle\">Canada Wages Growth</span>:</b> {latest_volume:,}% vs last year",
+    f"<b>Current <span class=\"currentTitle\">Canada Wages Growth</span>:</b> {latest_volume:,}%",
     html_content,
     flags=re.DOTALL
 )
