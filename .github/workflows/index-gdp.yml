@@ -1,9 +1,8 @@
 name: Index.html - Update GDP
 
 on:
-schedule:
+  schedule:
   - cron: "20 11 12 1,4,7,10 *"  # Run on the 12th day of January, April, July, and October at 011:20 AM UTC
-
   workflow_dispatch:        # Allow manual triggering
 
 permissions:
