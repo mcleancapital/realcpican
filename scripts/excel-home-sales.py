@@ -73,15 +73,10 @@ def update_excel(file_path, recent_date, recent_value):
             most_recent_date_in_excel = pd.to_datetime(most_recent_date_in_excel).strftime("%Y-%m-%d")
             most_recent_month = pd.to_datetime(most_recent_date_in_excel).month
 
-        # Check if the most recent row needs to be replaced or if a new row should be added
+        # Check if a new row should be added
         if most_recent_date_in_excel == recent_date:
             print(f"Recent date {recent_date} already exists in the Excel file. No update needed.")
             return
-        elif most_recent_month != 12:
-            # Replace row 2
-            ws.cell(row=2, column=1, value=recent_date)  # Date
-            ws.cell(row=2, column=2, value=recent_value)  # LEI Value
-            print(f"Replaced row 2 with new data for date: {recent_date}")
         else:
             # Add a new row
             ws.insert_rows(2)
