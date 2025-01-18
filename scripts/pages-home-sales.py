@@ -34,7 +34,7 @@ formatted_percentage_change = f"{latest_percentage_change:+.1f}" if latest_perce
 # Prepare "let pi" data
 dates_since_reference = (data["Date"] - datetime(1969, 12, 20)).dt.days.tolist()
 monthly_totals = data["Value"].tolist()
-pi_data = f"let pi = [{dates_since_reference}, {monthly_totals}, null, null, '%', 0, []];"
+pi_data = f"let pi = [{dates_since_reference}, {monthly_totals}, null, null, '', 1, []];"
 
 # Read the HTML template
 with open(html_template, "r", encoding="utf-8") as file:
