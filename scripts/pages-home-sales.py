@@ -15,7 +15,7 @@ data.sort_values(by="Date", inplace=True)
 
 # Calculate the latest values
 latest_date = data.iloc[-1]["Date"]
-latest_volume = int(data.iloc[-1]["Value"])
+latest_volume = data.iloc[-1]["Value"]
 
 # Read cell C2 for '% Change vs Last Year' using openpyxl
 try:
