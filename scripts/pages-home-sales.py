@@ -1,4 +1,5 @@
 import pandas as pd
+from pandas import isnull
 import re
 from openpyxl import load_workbook
 from datetime import datetime
@@ -57,6 +58,13 @@ html_content = re.sub(
     html_content,
     flags=re.DOTALL
 )
+
+# Assuming latest_date is the variable that might be NaT
+if not isnull(latest_date):  # Check if latest_date is not NaT
+    timestamp_div.string = latest_date.strftime("%b %Y")
+else:
+    print("latest_date is NaT, skipping strftime conversion.")
+    timestamp_div.string = "N/A"  # Assign a default value or handle as needed
 
 # Update the timestamp
 timestamp_div = soup.find("div", {"id": "timestamp"})
