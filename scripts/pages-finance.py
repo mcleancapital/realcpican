@@ -63,11 +63,6 @@ timestamp_div = soup.find("div", {"id": "timestamp"})
 if timestamp_div:
     timestamp_div.string = latest_date.strftime("%b %Y")
 
-# Update the historical average in the stats table
-historical_avg_td = soup.select_one("table#stats td.left + td")
-if historical_avg_td:
-    historical_avg_td.string = "3%"
-
 # Save the updated HTML
 with open(output_html, "w", encoding="utf-8") as file:
     file.write(str(soup))
