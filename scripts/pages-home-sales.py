@@ -53,7 +53,7 @@ html_content = re.sub(
 # Update the timestamp
 html_content = re.sub(
     r"<div id=\"timestamp\">.*?</div>",
-    f"<div id=\"timestamp\">{latest_date.strftime('%b %Y')}</div>",
+    f"<div id=\"timestamp\">{latest_date}</div>",
     html_content,
     flags=re.DOTALL
 )
