@@ -5,6 +5,12 @@ from openpyxl import load_workbook
 from datetime import datetime
 from bs4 import BeautifulSoup
 
+# Find or create timestamp_div
+timestamp_div = soup.find("div", {"id": "timestamp"})
+if not timestamp_div:
+    timestamp_div = soup.new_tag("div", id="timestamp")
+    soup.append(timestamp_div)
+
 # File paths
 excel_file = './data/home-sales.xlsx'
 html_template = './home-sales/index.html'
