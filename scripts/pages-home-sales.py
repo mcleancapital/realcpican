@@ -15,7 +15,7 @@ data.sort_values(by="Date", inplace=True)
 
 # Calculate the latest values
 latest_date = data.iloc[-1]["Date"]
-latest_volume = data.iloc[-1]["Value"]
+latest_volume = int(data.iloc[-1]["Value"])
 
 # Read cell C2 for '% Change vs Last Year' using openpyxl
 try:
@@ -53,7 +53,7 @@ html_content = re.sub(
 # Update the timestamp
 html_content = re.sub(
     r"<div id=\"timestamp\">.*?</div>",
-    f"<div id=\"timestamp\">{latest_date}</div>",
+    f"<div id=\"timestamp\">{latest_date.strftime('%b %Y')}</div>",
     html_content,
     flags=re.DOTALL
 )
