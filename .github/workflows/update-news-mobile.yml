@@ -2,7 +2,7 @@ name: Update CNBC News Mobile
 
 on:
   schedule:
-    - cron: "*/240 * * * *" # Run every 240 minutes
+    - cron: "0 */4 * * *"  # Runs every 4 hours at the start of the hour
   workflow_dispatch:        # Allow manual triggering
 
 permissions:
