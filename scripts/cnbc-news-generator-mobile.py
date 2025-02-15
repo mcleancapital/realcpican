@@ -120,7 +120,16 @@ html_content = """
 # Function to fetch the image URL from the article page
 def fetch_image_url(article_url):
     try:
-        response = requests.get(article_url)
+        headers = {
+            "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.124 Safari/537.36"
+        }
+        response = requests.get(article_url, headers=headers)
+
+        # Check response status
+        print(f"Fetching {article_url} - Status Code: {response.status_code}")
+        if response.status_code != 200:
+            return None
+        
         soup = BeautifulSoup(response.content, "html.parser")
         # Look for the Open Graph meta tag with property="og:image"
         meta_image = soup.find("meta", property="og:image")
@@ -137,6 +146,12 @@ for entry in feed.entries[:30]:  # Fetch the latest 30 articles
 
     # Fetch the image URL
     image_url = fetch_image_url(article_url)
+
+    # Ensure the image URL is properly formatted to prevent '&' encoding issues
+    image_url = image_url.replace("&", "&amp;") if image_url else None
+
+    # Debug: Print the modified image URL
+    print(f"Modified Image URL: {image_url}")
 
     # Use the `get` method to safely access the `summary` attribute with a default value
     summary = entry.get('summary', 'No summary available.')
